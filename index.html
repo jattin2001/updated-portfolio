@@ -2305,7 +2305,9 @@
           document.getElementById("fsubject").value || "Portfolio Inquiry";
         const lname = document.getElementById("lname").value.trim();
         const fullName = lname ? `${fname} ${lname}` : fname;
-        const body = `Name: ${fullName}%0AEmail: ${femail}%0ASubject: ${sub}%0A%0A${encodeURIComponent(fmsgVal)}`;
+const body = encodeURIComponent(
+  `Name: ${fullName}\nEmail: ${femail}\nSubject: ${sub}\n\n${fmsgVal}`
+);
         const _u = "jattinkhajuria000",
           _d = "gmail.com";
         const mailto = `mailto:${_u}@${_d}?subject=${encodeURIComponent(sub + " — Portfolio Contact")}&body=${body}`;
